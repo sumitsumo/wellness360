@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+
 public class TaskController
 {
     @Autowired
@@ -37,7 +38,7 @@ public class TaskController
     }
 
     //update a task
-    @PutMapping("tasks/{id}")
+
     public Task updateTask(@RequestBody Task task, @PathVariable UUID id)
     {
         return taskService.updateTask(id,task);
