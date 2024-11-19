@@ -25,36 +25,41 @@ public class TaskController
 
     //get a specific task -----
     @GetMapping("/tasks/{id}")
-    public Task getTaskById(@PathVariable UUID id)
+    public ResponseEntity<Task> getTaskById(@PathVariable UUID id)
     {
-        return taskService.getTaskById(id);
+        Task response=taskService.getTaskById(id);
+        return ResponseEntity.ok().body(response);
     }
 
     //create a task
     @PostMapping("/tasks")
-    public Task createTask(@RequestBody Task task)
+    public ResponseEntity<Task> createTask(@RequestBody Task task)
     {
-        return taskService.createTask(task);
+        Task response= taskService.createTask(task);
+        return ResponseEntity.ok().body(response);
     }
 
     //update a task
 
-    public Task updateTask(@RequestBody Task task, @PathVariable UUID id)
+    public ResponseEntity<Task> updateTask(@RequestBody Task task, @PathVariable UUID id)
     {
-        return taskService.updateTask(id,task);
+        Task response= taskService.updateTask(id,task);
+        return ResponseEntity.ok().body(response);
     }
 
     //delete a task
     @DeleteMapping("/tasks/{id}")
-    public Task deleteTask(@PathVariable UUID id)
+    public ResponseEntity<Task> deleteTask(@PathVariable UUID id)
     {
-        return taskService.deleteTask(id);
+        Task task= taskService.deleteTask(id);
+        return ResponseEntity.ok().body(task);
     }
 
     //complete a task
     @PatchMapping("/tasks/{id}")
-    public Task completeTask(@PathVariable UUID id)
+    public ResponseEntity<Task> completeTask(@PathVariable UUID id)
     {
-        return taskService.completeTask(id);
+        Task response= taskService.completeTask(id);
+        return ResponseEntity.ok().body(response);
     }
 }
