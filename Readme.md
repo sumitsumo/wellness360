@@ -23,7 +23,9 @@ Demonstation project for the Internship as described in the job description
 
 - **Java Development Kit (JDK):** Version 11 or higher.
 - **Maven/Gradle:** Ensure the project build tool is installed.
-- **Database Setup:** Configure the database as specified in the `application.properties` file.
+- **Auth Setup:** Configure the authentication as basic if required to test. Please comment the exclude path in main class:
+  - (exclude = { SecurityAutoConfiguration.class }) 
+  - The username and password are as specified in the `application.properties` file.
 - **Git:** Clone the repository.
 
 ### Clone the Repository
@@ -31,3 +33,5 @@ Demonstation project for the Internship as described in the job description
 ```bash
 git clone https://github.com/sumitsumo/wellness360.git
 cd wellness360
+
+open the pom.xml as a new project in any IDE of choice
